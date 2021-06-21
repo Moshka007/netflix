@@ -1,0 +1,99 @@
+/* 
+logo
+*/
+.header::before {
+    content: '';
+    position: fixed;
+    background: #05050599  url(https://assets.nflxext.com/ffe/siteui/vlv3/c0a32732-b033-43b3-be2a-8fee037a6146/a5a7610f-d18d-4971-90c1-a4b3d85b3d7a/BY-ru-20210607-popsignuptwoweeks-perspective_alpha_website_small.jpg) no-repeat center top / cover;
+    background-blend-mode: darken;
+    z-index: -1;
+    left: 0px; right: 0; /* Вся ширин */
+    top: 0px; bottom: 0; 
+    filter: blur(3px);
+    height: 50vh;
+    width: 105vw;
+}
+
+.header {
+    width: 100vw;
+    height: 49vh;
+    border-bottom: 10px solid #424242;
+}
+
+.header .container {
+    width: 90vw;
+    margin: 0 auto;
+    
+}
+.logo-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-logo {
+    background-color: #555555;
+    border: none;
+    opacity: 0.8;
+    width: 150px;
+    height: 40px;
+    color: #F65261;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#logo{
+    color: #F65261;
+    cursor: pointer;
+}
+
+/* 
+search-panel
+*/
+
+.search-block {
+    width: 95%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-top: 5vh;
+}
+
+#search-heading {
+    font-weight: 350;
+    font-size: 45px;
+    color: #fff;
+}
+
+.search-input {
+    border: none;
+    background-color: #424242;
+    width: 80%;
+    height: 50px;
+    opacity: 0.9;
+    border-radius: 4px;
+    font-size: 20px;
+    padding-left: 20px;
+    outline: none;
+}
+
+.search-panel {
+    display: flex;
+}
+
+.btn-search {
+   display: block;
+   background-color: #F65261;
+   border:none;
+   height: 50px;
+   border-radius: 4px;
+   margin-left: 20px;
+   width: 12%;
+   max-width: 180px;
+   min-width: 85px;
+   font-size: 18px;
+   color: #fff;
+   cursor: pointer;
+}
+

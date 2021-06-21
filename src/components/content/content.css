@@ -1,0 +1,27 @@
+.content {
+    background: #232323;
+    width: 100vw;
+}
+.content .container {
+    width: 90vw;
+    margin: 0 auto;
+    
+}
+
+.count-movies {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.count {
+    font-weight: 600;
+    margin-right: 7px;
+}
+
+.descr {
+    font-weight: 300;
+}
+

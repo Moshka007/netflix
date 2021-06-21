@@ -1,0 +1,13 @@
+.movie-list-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+.movie-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
