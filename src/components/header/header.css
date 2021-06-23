@@ -12,11 +12,13 @@ logo
     filter: blur(3px);
     height: 50vh;
     width: 105vw;
+    min-height: 500px;
 }
 
 .header {
     width: 100vw;
    height: 49vh;
+   min-height: 400px;
     border-bottom: 10px solid #424242;
 }
 
@@ -28,7 +30,7 @@ logo
 .logo-panel {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .btn-logo {
@@ -45,8 +47,18 @@ logo
 }
 
 #logo{
+    display: flex;
     color: #F65261;
     cursor: pointer;
+    font-size: 20px;
+}
+
+.large-logo {
+    font-weight: 800;
+}
+
+.litle-logo {
+    font-weight: 400;
 }
 
 /* 

@@ -8,7 +8,12 @@ export default class MovieStore {
         this._totalCount = 0
         this._selectedGenre = ''
         this._sortBy = 'release_date'
+        this._search = '';
         makeAutoObservable(this);
+    }
+
+    setSearch(search) {
+        this._search = search;
     }
 
     setSort(sortBy) {
@@ -43,5 +48,9 @@ export default class MovieStore {
 
     get sort() {
         return this._sortBy;
+    }
+
+    get search() {
+        return this._search;
     }
 }
