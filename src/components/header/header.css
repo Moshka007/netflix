@@ -16,7 +16,7 @@ logo
 
 .header {
     width: 100vw;
-    height: 49vh;
+   height: 49vh;
     border-bottom: 10px solid #424242;
 }
 
@@ -57,7 +57,7 @@ search-panel
     width: 95%;
     max-width: 1500px;
     margin: 0 auto;
-    padding-top: 5vh;
+    padding-top: 3vh;
 }
 
 #search-heading {

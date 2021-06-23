@@ -4,15 +4,19 @@
 
 .movie-item {
     margin-top: 40px;
+    width: 27vw;
 }
 
 .movie-img {
     width: 27vw;
+    height:0%
+
 }
 
 .movie-name-wrap {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     margin-top: 20px;
     color: #fff;
 }

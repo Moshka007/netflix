@@ -1,23 +1,29 @@
 import React from 'react';
 import './movie-list-item.css'
 
-const MovieListItem = () => {
+const MovieListItem = ({srcImg, title, year, genres}) => {
     return (
         <li className="wrapper">
             <div className="movie-item">
                 <div className="movie-item-image">
-                    <img className="movie-img" src="https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg" alt=""/>
+                    <img className="movie-img" src={srcImg} alt="notfaound"/>
                 </div>
                 <div className="movie-name-wrap">
                     <div className="movie-name">
-                    Fifty Shades Freed
+                        {title}
                     </div>
                     <div className="movie-year">
-                        2004
+                        {year}
                     </div>
                 </div>
                 <div className="genry">
-                    Dramma, Biography
+                    {genres.map((genre, i)=> {
+                        if(i === genres.length-1){
+                            return genre 
+                        } else {
+                            return genre + ', '
+                        }
+                    })}
                 </div>
             </div>
         </li>

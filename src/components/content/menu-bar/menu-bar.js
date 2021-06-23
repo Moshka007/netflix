@@ -1,24 +1,30 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { Context } from '../../../index';
 import './menu-bar.css'
 
 const MenuBar = () => {
+    const {movie} = useContext(Context);
+
     return (
         <div className="menu-container">
             <div className="menu-bar">
                     <div className="menu">
                         <ul>
-                            <li>ALL</li>
-                            <li>DOCUMENTARY</li>
-                            <li>COMEDY</li>
-                            <li>HORROR</li>
-                            <li>CRIME</li>
+                            <li onClick={() => movie.setSelectedGenre('')}>ALL</li>
+                            <li onClick={() => movie.setSelectedGenre('Documentary')}>DOCUMENTARY</li>
+                            <li onClick={() => movie.setSelectedGenre('Comedy')}>COMEDY</li>
+                            <li onClick={() => movie.setSelectedGenre('Horror')}>HORROR</li>
+                            <li onClick={() => movie.setSelectedGenre('Comedy')}>CRIME</li>
                         </ul>
                     </div>
                     <div className="sort">
-                        <ul>
-                            <li>SORT BY</li>
-                            <li>RELESE DATE</li>
-                        </ul>
+                        <div className="sort-heading">
+                            SORT BY
+                        </div>
+                       <select onClick={() => {movie.setSort(document.querySelector(".sort-select").value); console.log(document.querySelector(".sort-select").value)}} className="sort-select">
+                            <option className="sort-opt" value="release_date">DATE</option>
+                            <option className="sort-opt" value="vote_average">RATING</option>
+                        </select>
                     </div>
             </div>
             <hr/>

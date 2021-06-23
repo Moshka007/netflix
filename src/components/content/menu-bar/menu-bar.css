@@ -27,6 +27,30 @@ ul {
     cursor: pointer;
 }
 
+.sort {
+    display: flex;
+    align-items: center;
+}
+
+.sort-heading {
+    opacity: 0.7;
+    margin-right: 10px;
+}
+
+.sort-select {
+    background: #232323;
+    border: none;
+    list-style-type: none;
+    color: #fff;
+    font-size: 15px;
+    overflow: hidden;
+    -moz-appearance: none;
+}
+
+.sort-opt {
+    color: #fff;
+}
+
 hr {
     border: none;
     border-bottom: 2px solid #232323;

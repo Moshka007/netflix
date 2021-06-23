@@ -6,7 +6,7 @@ const AddModal = () => {
         <div className="add-modal-container">
             <div className="add-modal-content">
                 <div className="cross">
-                <img className="cross-img" src="https://img.icons8.com/material-sharp/24/000000/multiply.png"/>
+                <img className="cross-img" src="https://img.icons8.com/material-sharp/24/000000/multiply.png" alt="error img"/>
                 </div>
                 <h1 className="add-heading">ADD MOVIE</h1>
                 <div className="add-input-group">

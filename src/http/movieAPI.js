@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const fetchMovies = async () => {
-    const {data} = await axios.get(`http://localhost:4000/movies`)
+export const fetchMovies = async (filter, sortBy, sortOrder) => {
+    const {data} = await axios.get(`http://localhost:4000/movies`, {params: {limit: 6, offset:3, filter, sortBy, sortOrder}})
     return data
 }
 

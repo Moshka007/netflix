@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
+import MovieStore from './components/store/movie-store';
 import App from './components/app/app' 
+import './index.css';
+
+export const Context = createContext(null);
 
 ReactDOM.render(
-  <App/>,
+  <Context.Provider value = {{
+    movie: new MovieStore()
+  }}>
+  <App/>
+  </Context.Provider>,
   document.getElementById('root')
 );
 
