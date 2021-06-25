@@ -16,6 +16,7 @@ const Home = observer(() => {
             movie.setTotalCount(response.totalAmount);
         })();
     }, [movie.selectedGenre, movie.sort, movie.search]);
+    
     return (
         <div className="content">
             <div className="container">

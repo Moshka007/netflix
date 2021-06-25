@@ -45,6 +45,7 @@ ul {
     font-size: 15px;
     overflow: hidden;
     -moz-appearance: none;
+    outline: none;
 }
 
 .sort-opt {

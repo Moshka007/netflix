@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import {Context} from '../../index'
+import React, { useContext, useState } from 'react';
+import {Context} from '../../index';
 import './header.css';
 
 const Header = () => {
@@ -11,9 +11,15 @@ const Header = () => {
         console.log(movie.search);
     }
         
+    function showModal() {
+        document.querySelector('.add-modal-container').style.display = 'flex';
+    }
+
     return (
         <header className="header">
+            
             <div className="container">
+                
                 <div className="logo-panel">
                     <h3 id="logo">
                     <div id="logo">
@@ -25,7 +31,7 @@ const Header = () => {
                         </div>
                     </div>
                     </h3>
-                    <button className="btn btn-logo">
+                    <button onClick={showModal}className="btn btn-logo">
                         + ADD MOVIE
                     </button>
                 </div>
