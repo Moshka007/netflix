@@ -6,3 +6,11 @@
     height: 10%;
     background-color: #424242;
 }
+
+.large-logo {
+    font-weight: 800;
+}
+
+.litle-logo {
+    font-weight: 400;
+}

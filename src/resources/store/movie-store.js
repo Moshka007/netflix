@@ -2,13 +2,21 @@ import {makeAutoObservable} from 'mobx';
 
 export default class MovieStore {
     constructor() {
-        this._movies = [
-        ]
-        
+        this._movies = []
+        this._selectMovie = {};
         this._totalCount = 0
         this._selectedGenre = ''
         this._sortBy = 'release_date'
+        this._search = '';
         makeAutoObservable(this);
+    }
+
+    setSelectMovie(movie) {
+        this._selectMovie = movie;
+    }
+
+    setSearch(search) {
+        this._search = search;
     }
 
     setSort(sortBy) {
@@ -43,5 +51,13 @@ export default class MovieStore {
 
     get sort() {
         return this._sortBy;
+    }
+
+    get search() {
+        return this._search;
+    }
+
+    get selectMovie() {
+        return this._selectMovie;
     }
 }

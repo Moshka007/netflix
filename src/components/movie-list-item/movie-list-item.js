@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../index';
+import { fetchOneMovie } from '../../resources/api/movieAPI';
 import './movie-list-item.css'
 
-const MovieListItem = ({srcImg, title, year, genres}) => {
+const MovieListItem = ({srcImg, title, year, genres, movieId}) => {
+    const {movie} = useContext(Context)
+
+    async function getOneMovie(id) {
+        const movieItem = await fetchOneMovie(id);
+        movie.setSelectMovie(movieItem);
+        document.documentElement.scrollTop = 0;
+    }
+
     return (
-        <li className="wrapper">
+        <li 
+            key={movieId} 
+            className="wrapper"
+            onClick = {() => getOneMovie(movieId)}
+        >
             <div className="movie-item">
                 <div className="movie-item-image">
                     <img className="movie-img" src={srcImg} alt="notfaound"/>
@@ -24,6 +38,7 @@ const MovieListItem = ({srcImg, title, year, genres}) => {
                             return genre + ', '
                         }
                     })}
+                    
                 </div>
             </div>
         </li>

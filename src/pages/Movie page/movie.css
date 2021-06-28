@@ -1,0 +1,109 @@
+.header-movie::before {
+    content: '';
+    position: fixed;
+    background: #05050599  url(https://assets.nflxext.com/ffe/siteui/vlv3/c0a32732-b033-43b3-be2a-8fee037a6146/a5a7610f-d18d-4971-90c1-a4b3d85b3d7a/BY-ru-20210607-popsignuptwoweeks-perspective_alpha_website_small.jpg) no-repeat center top / cover;
+    background-blend-mode: darken;
+    z-index: -1;
+    left: 0px; right: 0; 
+    top: 0px; bottom: 0; 
+    filter: blur(3px);
+    height: 100vh;
+    width: 105vw;
+    min-height: 500px;
+}
+
+.header-movie {
+    width: 100vw;
+   height: 49vh;
+   min-height: 700px;
+   max-height: 800px;
+    border-bottom: 10px solid #424242;
+}
+
+.movie-item-page{
+    background-color: rgba(8, 8, 8, 0.8);
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+}
+
+.movie-item-container {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.search-logo {
+    width: 25px;
+    cursor: pointer;
+}
+
+.movie-card-wrapper {
+    display: flex;
+    color: #fff;;
+}
+
+.movie-img-card{
+    height: 55vh;
+}
+.movie-card-img img {
+    margin-top: 10px;
+    height: 75%;
+}
+
+.movie-text-wrapper {
+    margin-top: 5vh;
+   
+}
+.heading-card {
+    display: flex;
+    align-items:center
+}
+
+.movie-card-heading {
+    font-size: 400%;
+    font-weight: 300;
+}
+
+.rating {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    min-height: 75px;
+    min-width: 75px;
+    color: rgb(53, 151, 94);
+    font-size: 250%;
+    font-weight: 200;
+    border: 1px solid rgb(255, 255, 255, .7);
+    border-radius: 50%;
+    margin-left: 1vw;
+    
+}
+
+.movie-card-genres {
+    color: #fff;
+    opacity: .7;
+    margin-top: 1vh;
+    font-size: 140%;
+}
+
+.movie-card-year {
+    display: flex;
+    width: 15vw;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    color:#F65261;
+    font-size: 160%;
+    opacity: .7;
+}
+
+.duration {
+    margin-left: 2vw;
+}
+
+.movie-card-description {
+    width: 90%;
+    opacity: .7;
+    font-size: 140%;
+
+}

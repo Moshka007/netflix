@@ -1,8 +1,8 @@
 import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import MovieStore from './components/store/movie-store';
-import App from './components/app/app' 
+import MovieStore from './resources/store/movie-store';
+import App from './app' 
 import './index.css';
 
 export const Context = createContext(null);
