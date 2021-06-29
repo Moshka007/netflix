@@ -8,7 +8,18 @@ export default class MovieStore {
         this._selectedGenre = ''
         this._sortBy = 'release_date'
         this._search = '';
+        this._limit = 6;
+        this._offset = 0;
+        this._currentPage = 1
         makeAutoObservable(this);
+    }
+
+    setCurrentPage(page) {
+        this._currentPage = page;
+    }
+
+    setOffset(offset) {
+        this._offset = offset;
     }
 
     setSelectMovie(movie) {
@@ -59,5 +70,17 @@ export default class MovieStore {
 
     get selectMovie() {
         return this._selectMovie;
+    }
+
+    get offset() {
+        return this._offset;
+    }
+
+    get limit() {
+        return this._limit;
+    }
+
+    get currentPage() {
+        return this._currentPage
     }
 }

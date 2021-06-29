@@ -7,7 +7,21 @@ import './movie.css'
 
 const Movie = observer(() => {
     const {movie} = useContext(Context);
-    console.log(movie);
+
+    function setRatingColor() {
+        let rating = movie.selectMovie.vote_average,
+            color = '';
+
+        if (rating <= 7 && rating >= 4) {
+            color = 'rgb(255, 217, 0)';
+        }
+
+        if (rating < 4 && rating >= 0) {
+            color = 'red';
+        }
+        return  color;
+    }
+
     return (
         <div className="header-movie">
             <div className="movie-item-page">
@@ -37,8 +51,11 @@ const Movie = observer(() => {
                                 <div className="movie-card-heading">
                                     {movie.selectMovie.title}
                                 </div>
-                                <div className="rating">
-                                    {movie.selectMovie.vote_average}
+                                <div style={{color: setRatingColor()}} className="rating">
+                                    { 
+                                    movie.selectMovie.vote_average
+                                       
+                                    }
                                 </div>
                             </div>
                             <div className="movie-card-genres">

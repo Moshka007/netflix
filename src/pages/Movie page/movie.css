@@ -31,6 +31,7 @@
 .movie-item-container {
     width: 90vw;
     margin: 0 auto;
+    height: 100%;
 }
 
 .search-logo {
@@ -41,18 +42,18 @@
 .movie-card-wrapper {
     display: flex;
     color: #fff;;
+    height: 90%;
 }
 
-.movie-img-card{
-    height: 55vh;
-}
+
 .movie-card-img img {
     margin-top: 10px;
-    height: 75%;
+    height: 85%;
 }
 
 .movie-text-wrapper {
     margin-top: 5vh;
+    margin-left: 5vw;
    
 }
 .heading-card {

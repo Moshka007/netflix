@@ -3,19 +3,24 @@ import { observer } from 'mobx-react-lite';
 import { fetchMovies } from '../../resources/api/movieAPI';
 import MenuBar from '../../components/menu-bar/menu-bar';
 import MovieList from '../../components/movie-list/movie-list';
+import Pagination from '../../components/pagination/pagination';
 import { Context } from '../../index';
 import './home.css';
 
 const Home = observer(() => {
     const {movie} = useContext(Context);
 
+    const fetchMovieList = async () => {
+        let response = await fetchMovies(movie.sort, movie.search, movie.offset, movie.limit, movie.selectedGenre);
+        movie.setMovies(response.movies.rows);
+        movie.setTotalCount(response.movies.count);
+        movie.setCurrentPage(1);
+    }
+
     useEffect(() => {
-        (async function(){
-            let response = await fetchMovies(movie.selectedGenre, movie.sort, 'desc', movie.search);
-            movie.setMovies(response.data);
-            movie.setTotalCount(response.totalAmount);
-        })();
-    }, [movie.selectedGenre, movie.sort, movie.search]);
+        fetchMovieList();
+        
+    }, [movie.selectedGenre, movie.sort, movie.search, movie.offset, movie.limit]);
     
     return (
         <div className="content">
@@ -26,6 +31,7 @@ const Home = observer(() => {
                     <div className="descr">movies found</div>
                 </div>
                 <MovieList/>
+                <Pagination/>
             </div>
         </div>
     );

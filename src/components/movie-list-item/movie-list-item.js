@@ -8,7 +8,7 @@ const MovieListItem = ({srcImg, title, year, genres, movieId}) => {
 
     async function getOneMovie(id) {
         const movieItem = await fetchOneMovie(id);
-        movie.setSelectMovie(movieItem);
+        movie.setSelectMovie(movieItem.movie);
         document.documentElement.scrollTop = 0;
     }
 
@@ -16,13 +16,20 @@ const MovieListItem = ({srcImg, title, year, genres, movieId}) => {
         <li 
             key={movieId} 
             className="wrapper"
-            onClick = {() => getOneMovie(movieId)}
         >
             <div className="movie-item">
                 <div className="movie-item-image">
-                    <img className="movie-img" src={srcImg} alt="notfaound"/>
+                    <img 
+                        className="movie-img" 
+                        src={srcImg} 
+                        alt="notfaound"
+                        onClick = {() => getOneMovie(movieId)}
+                        />
                 </div>
-                <div className="movie-name-wrap">
+                <div 
+                    className="movie-name-wrap"
+                    onClick = {() => getOneMovie(movieId)}
+                >
                     <div className="movie-name">
                         {title}
                     </div>
