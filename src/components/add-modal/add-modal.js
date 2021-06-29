@@ -7,7 +7,7 @@ const AddModal = () => {
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
     const [url, setUrl] = useState('');
-    const [genres, setGenres] = useState([]);
+    const [genres, setGenres] = useState('');
     const [overview, setOverview] = useState('');
     const [runtime, setRuntime] = useState(0);
 
@@ -18,14 +18,17 @@ const AddModal = () => {
         document.querySelector('.add-input-group').reset();
     }
 
+    const fetchMovieList = async () => {
+        let response = await fetchMovies(movie.sort, movie.search, movie.offset, movie.limit);
+        movie.setMovies(response.movies.rows);
+        movie.setTotalCount(response.movies.count);
+        movie.setCurrentPage(1);
+    }
+
     function hideModal() {
         document.querySelector('.add-modal-container').style.display = 'none';
         document.querySelector('.add-input-group').reset();
-        (async function(){
-            let response = await fetchMovies(movie.selectedGenre, movie.sort, 'desc', movie.search);
-            movie.setMovies(response.data);
-            movie.setTotalCount(response.totalAmount);
-        })();
+        fetchMovieList();
     }
 
    
@@ -78,7 +81,7 @@ const AddModal = () => {
                         <div className="input-title">
                             <h2 className="heading input-genre-heading">GENRE</h2>
                             <input 
-                                onChange={(e) => {setGenres((e.target.value).split(' '))}} 
+                                onChange={(e) => {setGenres(e.target.value)}} 
                                 className="input" 
                                 type="text"
                             />

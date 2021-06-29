@@ -3,15 +3,62 @@
 }
 
 .movie-item {
+    cursor: pointer;
     margin-top: 40px;
     width: 27vw;
 }
 
 .movie-img {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 27vw;
     height:0%
-
 }
+
+.movie-item-image {
+    display: flex;
+    position: static;
+}
+
+/* .movie-item-image:hover {
+    display: flex;
+    position: relative;
+}
+.cla {
+    position: relative;
+  color: white;
+  border-radius: 50%;
+}
+
+.cla::after {
+    content: '•••';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-46%, -37%) rotate(90deg);
+    font-size: 15px; 
+    letter-spacing: 4px;
+    font-size: 10px;
+    opacity: .7;
+  font-weight: 700;
+} */
+
+.remove-btn {
+    display: flex;
+    color:#fff;
+    justify-content: center;
+    align-items:center;
+    z-index: 1000;
+    position: absolute;
+    top: 2%;
+    left: 88%;
+    background: #232323;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+
+} 
 
 .movie-name-wrap {
     display: flex;

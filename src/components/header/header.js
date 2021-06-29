@@ -4,11 +4,11 @@ import './header.css';
 
 const Header = () => {
     const {movie} = useContext(Context);
+    const [inputValue, setValue] = useState('');
 
     function setSearchContext(e) {
         e.preventDefault();
-        movie.setSearch(document.querySelector('.search-input').value.trim());
-        console.log(movie.search);
+        movie.setSearch(inputValue.trim());
     }
         
     function showModal() {
@@ -40,6 +40,7 @@ const Header = () => {
                     <h1 id="search-heading">FIND YOUR MOVIE</h1>
                     <form onSubmit={setSearchContext} className="search-panel">
                         <input 
+                            onChange={(e) => setValue(e.target.value)}
                             className="search-input"
                             type="text"
                             placeholder="What do you want to watch?"

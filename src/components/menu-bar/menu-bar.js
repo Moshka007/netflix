@@ -4,8 +4,9 @@ import './menu-bar.css'
 
 const MenuBar = () => {
     const {movie} = useContext(Context);
-    const setSortOnclick = () => {
-        movie.setSort(document.querySelector(".sort-select").value)
+
+    const setSortOnclick = (e) => {
+        movie.setSort(e.target.value)
     }
 
     return (
@@ -24,7 +25,9 @@ const MenuBar = () => {
                         <div className="sort-heading">
                             SORT BY
                         </div>
-                       <select onClick={setSortOnclick} className="sort-select">
+                       <select 
+                            onClick={setSortOnclick} 
+                            className="sort-select">
                             <option className="sort-opt" value="release_date">DATE</option>
                             <option className="sort-opt" value="vote_average">RATING</option>
                         </select>
